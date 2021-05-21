@@ -22,7 +22,7 @@ sha512sums=('SKIP' 'SKIP')
 build() {
   cd ${pkgbase}-everywhere-src-${pkgver}${pkgext}
   ./configure.bat -static -release \
-   -prefix C:/opt/${pkgname}/${pkgver}${pkgext} \
+   -prefix C:/opt/${pkgnamesimple}/${pkgver}${pkgext} \
    -opensource -confirm-license \
    -platform win32-g++ \
    -opengl desktop \
@@ -66,5 +66,5 @@ package() {
   cd ${pkgbase}-everywhere-src-${pkgver}${pkgext}
   DESTDIR="${pkgdir}" \
   cmake --install .
-  install -m 0755 ${srcdir}/${pkgnamesimple}-env.sh ${pkgdir}/opt/${pkgname}/${pkgver}${pkgext}/bin
+  install -m 0755 ${srcdir}/${pkgnamesimple}-env.sh ${pkgdir}/opt/${pkgnamesimple}/${pkgver}${pkgext}/bin
 }
