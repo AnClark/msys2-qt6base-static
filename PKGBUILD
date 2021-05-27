@@ -20,7 +20,7 @@ source=("https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver}/subm
 sha512sums=('SKIP' 'SKIP')
 
 build() {
-  cd ${pkgbase}-everywhere-src-${pkgver}${pkgext}
+  cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
   ./configure.bat -static -release \
    -prefix C:/opt/${pkgnamesimple}/${pkgver}${pkgext} \
    -opensource -confirm-license \
@@ -63,7 +63,7 @@ build() {
 }
 
 package() {
-  cd ${pkgbase}-everywhere-src-${pkgver}${pkgext}
+  cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
   DESTDIR="${pkgdir}" \
   cmake --install .
   install -m 0755 ${srcdir}/${pkgnamesimple}-env.sh ${pkgdir}/opt/${pkgnamesimple}/${pkgver}${pkgext}/bin
