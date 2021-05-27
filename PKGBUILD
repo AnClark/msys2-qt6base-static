@@ -29,6 +29,7 @@ build() {
    -qt-doubleconversion \
    -qt-pcre \
    -qt-sqlite \
+   -qt-zlib \
    -no-icu \
    -no-cups \
    -no-directfb \
