@@ -16,8 +16,15 @@ makedepends=('mingw-w64-x86_64-gcc' 'mingw-w64-x86_64-cmake' 'mingw-w64-x86_64-n
 conflicts=()
 groups=('qt' 'qt6')
 source=("https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver}/submodules/${pkgbase}-everywhere-src-${pkgver}${pkgext}.tar.xz" 
-"${pkgnamesimple}-env.sh")
-sha512sums=('SKIP' 'SKIP')
+"${pkgnamesimple}-env.sh"
+"0001-cmake-disable-dbus1.patch")
+sha512sums=('SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+  cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
+
+  patch -N -p1 -i "${srcdir}"/0001-cmake-disable-dbus1.patch
+}
 
 build() {
   cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
@@ -56,6 +63,7 @@ build() {
    -qt-libpng \
    -no-gif \
    -no-ico \
+   -no-dbus \
    -make libs \
    -make tools \
    -nomake examples \
