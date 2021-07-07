@@ -57,3 +57,18 @@ Including this script will configure some necessary environment variables to let
 
 - Original author: [Rui Nuno Capela (rncbc)](https://github.com/rncbc)
 - Maintainer: [AnClark](https://github.com/AnClark)
+
+## References
+
+rncbc's official repos for Qt6 static build:
+
+- <https://build.opensuse.org/package/show/home:rncbc/qtbase6-static> (OBSOLETE)
+- <https://build.opensuse.org/project/show/home:rncbc:qt6.1-static>
+- <https://build.opensuse.org/project/show/home:rncbc:qt6.2-static>
+
+
+> **WARNING:**
+>
+> This branch only implements the original `qtbase6-static` repo, which was removed.
+>
+> It's not suitable for newer offical Vee-One source trees (after changing Qt initial script into `/opt/qt6.1-static/bin/qt6.1-static-env.sh`).
