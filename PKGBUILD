@@ -4,10 +4,10 @@
 pkgbase=qtbase
 pkgname=mingw-w64-x86_64-${pkgbase}6-static
 pkgnamesimple=${pkgbase}6-static
-pkgver=6.1.0
+pkgver=6.1.2
 pkgext=
 pkgrel=1
-pkgdesc='Qt 6 base modules - static libraries'
+pkgdesc='Qt 6.1 base modules - static libraries'
 arch=('x86_64')
 url='https://www.qt.io'
 license=('GPL3' 'LGPL3')
@@ -16,7 +16,7 @@ makedepends=('mingw-w64-x86_64-gcc' 'mingw-w64-x86_64-cmake' 'mingw-w64-x86_64-n
 conflicts=()
 groups=('qt' 'qt6')
 source=("https://download.qt.io/official_releases/qt/${pkgver%.*}/${pkgver}/submodules/${pkgbase}-everywhere-src-${pkgver}${pkgext}.tar.xz" 
-"${pkgnamesimple}-env.sh"
+"qt6.1-static-env.sh"
 "0001-cmake-disable-dbus1.patch")
 sha512sums=('SKIP' 'SKIP' 'SKIP')
 
@@ -29,7 +29,7 @@ prepare() {
 build() {
   cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
   ./configure.bat -static -release \
-   -prefix C:/opt/${pkgnamesimple}/${pkgver}${pkgext} \
+   -prefix C:/opt/qt6.1-static \
    -opensource -confirm-license \
    -platform win32-g++ \
    -opengl desktop \
@@ -75,5 +75,5 @@ package() {
   cd "${pkgbase}-everywhere-src-${pkgver}${pkgext}"
   DESTDIR="${pkgdir}" \
   cmake --install .
-  install -m 0755 ${srcdir}/${pkgnamesimple}-env.sh ${pkgdir}/opt/${pkgnamesimple}/${pkgver}${pkgext}/bin
+  install -m 0755 ${srcdir}/qt6.1-static-env.sh ${pkgdir}/opt/qt6.1-static/bin
 }

@@ -33,22 +33,22 @@ cd ~/msys2-qt6base-static/
 makepkg -f
 ```
 
-When done, you'll get a package file: ```mingw-w64-x86_64-qtbase6-static-6.1.0-x86_64.pkg.tar.zst```.
+When done, you'll get a package file: ```mingw-w64-x86_64-qtbase6-static-6.1.2-x86_64.pkg.tar.zst```.
 
 4. Install package.
 
 ```bash
-pacman -U mingw-w64-x86_64-qtbase6-static-6.1.0-x86_64.pkg.tar.zst
+pacman -U mingw-w64-x86_64-qtbase6-static-6.1.2-x86_64.pkg.tar.zst
 ```
 
-Finally, Qt6 base static library will be installed into `/opt/qtbase6-static`.
+Finally, Qt6 base static library will be installed into `/opt/qt6.1-static`.
 
 ## Enable Qt6 statically-linking for CMake
 
 There's also an initialization script within this package. If your project uses CMake, you can invoke it before configuring with CMake:
 
 ```bash
-source /opt/qtbase6-static/6.1.0/bin/qtbase6-static-env.sh
+source /opt/qt6.1-static/bin/qt6.1-static-env.sh
 ```
 
 Including this script will configure some necessary environment variables to let CMake choose static version of Qt6 library.
@@ -57,3 +57,11 @@ Including this script will configure some necessary environment variables to let
 
 - Original author: [Rui Nuno Capela (rncbc)](https://github.com/rncbc)
 - Maintainer: [AnClark](https://github.com/AnClark)
+
+## References
+
+rncbc's official repos for Qt6 static build:
+
+- <https://build.opensuse.org/package/show/home:rncbc/qtbase6-static> (OBSOLETE)
+- <https://build.opensuse.org/project/show/home:rncbc:qt6.1-static>
+- <https://build.opensuse.org/project/show/home:rncbc:qt6.2-static>
