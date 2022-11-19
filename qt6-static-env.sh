@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-QT_BASE_DIR=/opt/qt6.1-static
+QT_BASE_DIR=/opt/qt6-static
 
 export QTDIR=$QT_BASE_DIR
 export PATH=$QT_BASE_DIR/bin:$PATH

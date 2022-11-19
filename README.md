@@ -33,22 +33,22 @@ cd ~/msys2-qt6base-static/
 makepkg -f
 ```
 
-When done, you'll get a package file: ```mingw-w64-x86_64-qtbase6-static-6.1.2-x86_64.pkg.tar.zst```.
+When done, you'll get a package file: ```mingw-w64-x86_64-qtbase6-static-6.x.x-x86_64.pkg.tar.zst```. `6.x.x` should be the actual Qt version.
 
 4. Install package.
 
 ```bash
-pacman -U mingw-w64-x86_64-qtbase6-static-6.1.2-x86_64.pkg.tar.zst
+pacman -U mingw-w64-x86_64-qtbase6-static-6.x.x-x86_64.pkg.tar.zst
 ```
 
-Finally, Qt6 base static library will be installed into `/opt/qt6.1-static`.
+Finally, Qt6 base static library will be installed into `/opt/qt6-static`.
 
 ## Enable Qt6 statically-linking for CMake
 
 There's also an initialization script within this package. If your project uses CMake, you can invoke it before configuring with CMake:
 
 ```bash
-source /opt/qt6.1-static/bin/qt6.1-static-env.sh
+source /opt/qt6-static/bin/qt6-static-env.sh
 ```
 
 Including this script will configure some necessary environment variables to let CMake choose static version of Qt6 library.
