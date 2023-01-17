@@ -4,7 +4,7 @@
 pkgbase=qtbase
 pkgname=mingw-w64-x86_64-${pkgbase}6-static
 pkgnamesimple=${pkgbase}6-static
-pkgver=6.4.0
+pkgver=6.4.2
 pkgext=
 pkgrel=1
 pkgdesc='Qt 6 base modules - static libraries'
