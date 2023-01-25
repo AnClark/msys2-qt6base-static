@@ -62,6 +62,7 @@ build() {
    -qt-libjpeg \
    -qt-libpng \
    -qt-libmd4c \
+   -qt-libb2 \
    -no-gif \
    -no-ico \
    -no-dbus \
